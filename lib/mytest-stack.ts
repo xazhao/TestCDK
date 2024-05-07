@@ -44,7 +44,9 @@ export class MytestStack extends cdk.Stack {
       synth: new pipelines.ShellStep('Synth', {
         // Use a connection created using the AWS console to authenticate to GitHub
         // Other sources are available.
-        input: pipelines.CodePipelineSource.gitHub('xazhao/TestCDK', 'main'),
+        input: pipelines.CodePipelineSource.connection('xazhao/TestCDK', 'main', {
+          connectionArn: 'arn:aws:codestar-connections:us-west-2:088535341315:connection/954c630b-e671-4af3-810a-261218d132bc'
+        }),
         commands: [
           'aws sts get-caller-identity'
           // 'npm ci',
