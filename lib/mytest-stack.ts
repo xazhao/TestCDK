@@ -50,7 +50,7 @@ export class MytestStack extends cdk.Stack {
         installCommands: ['npm i -g npm@latest'],
         commands: [
           'aws sts get-caller-identity',
-          'npm ci',
+          'npm i',
           'npm run build',
           'cdk synth',
         ],
