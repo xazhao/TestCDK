@@ -50,7 +50,8 @@ export class MytestStack extends cdk.Stack {
         commands: [
           'npm i',
           'npm run build',
-          'cdk synth',
+          'npm install -g aws-cdk',
+          'npx cdk synth',
         ],
       }),
     });
