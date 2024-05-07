@@ -51,7 +51,7 @@ export class MytestStack extends cdk.Stack {
           'aws sts get-caller-identity',
           'npm ci',
           'npm run build',
-          'npx cdk synth',
+          'cdk synth',
         ],
       }),
     });
