@@ -47,9 +47,7 @@ export class MytestStack extends cdk.Stack {
         input: pipelines.CodePipelineSource.connection('xazhao/TestCDK', 'main', {
           connectionArn: 'arn:aws:codestar-connections:us-west-2:088535341315:connection/954c630b-e671-4af3-810a-261218d132bc'
         }),
-        installCommands: ['npm i -g npm@latest'],
         commands: [
-          'aws sts get-caller-identity',
           'npm i',
           'npm run build',
           'cdk synth',
